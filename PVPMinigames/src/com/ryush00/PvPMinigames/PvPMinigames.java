@@ -14,6 +14,7 @@ public class PvPMinigames extends JavaPlugin {
 
 	public static Logger log = Logger.getLogger("Minecraft.PvPMiniGames");
 	public Integer GameStatus = 0;
+	public final cmdPvPMinigames commandhandler = new cmdPvPMinigames(this);
 	public void onEnable()
 	{
 		PluginManager pm = getServer().getPluginManager();
@@ -23,7 +24,9 @@ public class PvPMinigames extends JavaPlugin {
 		log.info("You may not edit this plugin!");
 		pm.registerEvents(new Listeners(), this);
 	}
-	
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		return commandhandler.command(sender, args);
+	}
 
 	
 	public void onDisable()
