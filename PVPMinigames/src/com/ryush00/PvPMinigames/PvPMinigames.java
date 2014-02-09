@@ -14,15 +14,14 @@ public class PvPMinigames extends JavaPlugin {
 
 	public static Logger log = Logger.getLogger("Minecraft.PvPMiniGames");
 	public Integer GameStatus = 0;
-	
 	public void onEnable()
 	{
 		PluginManager pm = getServer().getPluginManager();
+		getCommand("pmg").setExecutor(new cmdPvPMinigames(this));
 		log.info("PvPMinigames Enabled!");
 		log.info("Developed by ryush00!");
 		log.info("You may not edit this plugin!");
 		pm.registerEvents(new Listeners(), this);
-		pm.registerEvents(new cmdPvPMinigames(), this);
 	}
 	
 

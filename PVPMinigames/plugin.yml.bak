@@ -3,5 +3,5 @@ main: com.ryush00.PvPMinigames.PvPMinigames
 version: 0.1
 commands:
   pmg:
-    description: TESTING.
-    usage: /<command> [arg]
+      description: TESTING.
+      usage: /<command> [arg]
