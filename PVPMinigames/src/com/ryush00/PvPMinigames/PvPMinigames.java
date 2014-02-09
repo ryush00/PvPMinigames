@@ -8,6 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.ryush00.PvPMinigames.command.cmdPvPMinigames;
+
 public class PvPMinigames extends JavaPlugin {
 
 	public static Logger log = Logger.getLogger("Minecraft.PvPMiniGames");
@@ -20,13 +22,10 @@ public class PvPMinigames extends JavaPlugin {
 		log.info("Developed by ryush00!");
 		log.info("You may not edit this plugin!");
 		pm.registerEvents(new Listeners(), this);
+		pm.registerEvents(new cmdPvPMinigames(), this);
 	}
 	
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
-	{
-		sender.sendMessage("명령어를 입력하셨습니다");
-		return true;
-	}
+
 	
 	public void onDisable()
 	{
