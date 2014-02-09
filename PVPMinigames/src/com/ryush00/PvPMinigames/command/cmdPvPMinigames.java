@@ -9,33 +9,29 @@ import org.bukkit.event.Listener;
 
 import com.ryush00.PvPMinigames.PvPMinigames;
 
-public class cmdPvPMinigames implements CommandExecutor {
+public class cmdPvPMinigames {
 	private PvPMinigames plugin; // pointer to your main class, unrequired if you don't need methods from the main class
 	 
 	public cmdPvPMinigames(PvPMinigames plugin) {
 		this.plugin = plugin;
 	}
 	
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
-	{
-		sender.sendMessage("명령어를 입력하셨습니다");
-		sender.sendMessage(args[0]);
-		return true;
-	}
+
 	public boolean command(CommandSender sender, String[] args) {
 		int len = args.length;
 		String label = args[0];	
-		if (label.equalsIgnoreCase("pgm")){
-			if(args[1].equalsIgnoreCase("test")){
+		if (label.equalsIgnoreCase("pmg")){
 				sender.sendMessage("테스트에요.");
-			}
-			else if(args[1].equalsIgnoreCase("test"))
-			{
+		}
+		else if(label.equalsIgnoreCase("test"))
+		{
 				Player p = (Player)sender;
 				p.playSound(p.getLocation(), Sound.ZOMBIE_PIG_HURT, 10, 1);
 			
-			}
-			return true;
+		}
+		else
+		{
+			sender.sendMessage(args[0]);
 		}
 
 		return true;
