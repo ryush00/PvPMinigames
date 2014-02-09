@@ -17,6 +17,7 @@ public class cmdPvPMinigames implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	{
 		sender.sendMessage("명령어를 입력하셨습니다");
+		sender.sendMessage(args[0]);
 		return true;
 	}
 	
