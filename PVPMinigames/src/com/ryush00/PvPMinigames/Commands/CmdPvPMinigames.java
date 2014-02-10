@@ -19,7 +19,7 @@ public class CmdPvPMinigames {
 	
 
 	public boolean command(CommandSender sender, Command cmd, String label, String[] args) {
-		if(args.length == 1)
+		if(args.length == 0)
 			return false;
 		if (!label.equalsIgnoreCase("pmg")){
 			return false;
@@ -38,7 +38,7 @@ public class CmdPvPMinigames {
 		
 		}
 
-		return false;
+		return true;
 	}
 	
 	public boolean cmdstart(CommandSender sender, Command cmd, String label, String[] args) {
