@@ -26,12 +26,12 @@ public class CmdPvPMinigames {
 		}
 		if(args[0].equalsIgnoreCase("start"))
 		{
-				cmdstart(sender, cmd, label, args);
+			MainScripter.cmdstart(sender, cmd, label, args);
 			
 		}
 		else if(args[0].equalsIgnoreCase("stop"))
 		{
-			cmdstop(sender, cmd, label, args);
+			MainScripter.cmdstop(sender, cmd, label, args);
 		}
 		else if(args[0].equalsIgnoreCase("info"))
 		{
@@ -41,31 +41,7 @@ public class CmdPvPMinigames {
 		return true;
 	}
 	
-	public boolean cmdstart(CommandSender sender, Command cmd, String label, String[] args) {
-		if(MainScripter.GameStatus==GameStatusList.NoPlay) {
-			//gamestart();
-			sender.sendMessage("게임시작스크립트 없긔. 어쨌든 시작");
-			MainScripter.GameStatus=GameStatusList.Ready;
-			return true;
-		} else {
-			sender.sendMessage("이미 시작되었습니다");
-			return true;
-		}
-		
-	}
 
-	public boolean cmdstop(CommandSender sender, Command cmd, String label, String[] args) {
-		if(MainScripter.GameStatus != GameStatusList.NoPlay){
-			//gamestop();
-			sender.sendMessage("게임정지스크립트 없긔. 어쨌든 정지");
-			MainScripter.GameStatus=GameStatusList.NoPlay;
-			return true;
-		} else {
-			sender.sendMessage("이미 시작되었습니다");
-			return true;
-		}
-		
-	}
 
 	public boolean cmdjoin(CommandSender sender, Command cmd, String label, String[] args) {
 		return false;
