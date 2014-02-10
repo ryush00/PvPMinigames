@@ -24,7 +24,7 @@ public class PvPMinigames extends JavaPlugin {
 		pm.registerEvents(new Listeners(), this);
 	}
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		return commandhandler.command(sender, args);
+		return commandhandler.command(sender, cmd, label, args);
 	}
 
 	

@@ -17,9 +17,8 @@ public class CmdPvPMinigames {
 	}
 	
 
-	public boolean command(CommandSender sender, String[] args) {
+	public boolean command(CommandSender sender, Command cmd, String label, String[] args) {
 		int len = args.length;
-		String label = args[0];	
 		if (label.equalsIgnoreCase("pmg")){
 				sender.sendMessage("테스트에요.");
 		}
