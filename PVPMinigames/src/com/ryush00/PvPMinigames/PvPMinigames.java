@@ -8,13 +8,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.ryush00.PvPMinigames.command.cmdPvPMinigames;
+import com.ryush00.PvPMinigames.Commands.CmdPvPMinigames;
 
 public class PvPMinigames extends JavaPlugin {
 
 	public static Logger log = Logger.getLogger("Minecraft.PvPMiniGames");
 	public Integer GameStatus = 0;
-	public final cmdPvPMinigames commandhandler = new cmdPvPMinigames(this);
+	public final CmdPvPMinigames commandhandler = new CmdPvPMinigames(this);
 	public void onEnable()
 	{
 		PluginManager pm = getServer().getPluginManager();

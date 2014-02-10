@@ -1,4 +1,4 @@
-package com.ryush00.PvPMinigames.command;
+package com.ryush00.PvPMinigames.Commands;
 
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -9,10 +9,10 @@ import org.bukkit.event.Listener;
 
 import com.ryush00.PvPMinigames.PvPMinigames;
 
-public class cmdPvPMinigames {
+public class CmdPvPMinigames {
 	private PvPMinigames plugin; // pointer to your main class, unrequired if you don't need methods from the main class
 	 
-	public cmdPvPMinigames(PvPMinigames plugin) {
+	public CmdPvPMinigames(PvPMinigames plugin) {
 		this.plugin = plugin;
 	}
 	
