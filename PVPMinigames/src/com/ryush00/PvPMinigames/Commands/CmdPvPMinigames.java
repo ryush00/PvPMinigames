@@ -8,32 +8,69 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 import com.ryush00.PvPMinigames.PvPMinigames;
+import com.ryush00.PvPMinigames.Scripts.MainScripter;
+import com.ryush00.PvPMinigames.Scripts.MainScripter.GameStatusList;
 
 public class CmdPvPMinigames {
 	private PvPMinigames plugin; // pointer to your main class, unrequired if you don't need methods from the main class
-	 
 	public CmdPvPMinigames(PvPMinigames plugin) {
 		this.plugin = plugin;
 	}
 	
 
 	public boolean command(CommandSender sender, Command cmd, String label, String[] args) {
-		int len = args.length;
-		if (label.equalsIgnoreCase("pmg")){
-				sender.sendMessage("테스트에요.");
+		if(args.length == 1)
+			return false;
+		if (!label.equalsIgnoreCase("pmg")){
+			return false;
 		}
-		else if(label.equalsIgnoreCase("test"))
+		if(args[0].equalsIgnoreCase("start"))
 		{
-				Player p = (Player)sender;
-				p.playSound(p.getLocation(), Sound.ZOMBIE_PIG_HURT, 10, 1);
+				cmdstart(sender, cmd, label, args);
 			
 		}
-		else
+		else if(args[0].equalsIgnoreCase("stop"))
 		{
-			sender.sendMessage(args[0]);
+			cmdstop(sender, cmd, label, args);
+		}
+		else if(args[0].equalsIgnoreCase("info"))
+		{
+		
 		}
 
-		return true;
+		return false;
 	}
+	
+	public boolean cmdstart(CommandSender sender, Command cmd, String label, String[] args) {
+		if(MainScripter.GameStatus==GameStatusList.NoPlay) {
+			//gamestart();
+			sender.sendMessage("게임시작스크립트 없긔. 어쨌든 시작");
+			MainScripter.GameStatus=GameStatusList.Ready;
+			return true;
+		} else {
+			sender.sendMessage("이미 시작되었습니다");
+			return true;
+		}
+		
+	}
+
+	public boolean cmdstop(CommandSender sender, Command cmd, String label, String[] args) {
+		if(MainScripter.GameStatus != GameStatusList.NoPlay){
+			//gamestop();
+			sender.sendMessage("게임정지스크립트 없긔. 어쨌든 정지");
+			MainScripter.GameStatus=GameStatusList.NoPlay;
+			return true;
+		} else {
+			sender.sendMessage("이미 시작되었습니다");
+			return true;
+		}
+		
+	}
+
+	public boolean cmdjoin(CommandSender sender, Command cmd, String label, String[] args) {
+		return false;
+		
+	}
+
 
 }

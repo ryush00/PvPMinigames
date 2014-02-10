@@ -13,7 +13,6 @@ import com.ryush00.PvPMinigames.Commands.CmdPvPMinigames;
 public class PvPMinigames extends JavaPlugin {
 
 	public static Logger log = Logger.getLogger("Minecraft.PvPMiniGames");
-	public Integer GameStatus = 0;
 	public final CmdPvPMinigames commandhandler = new CmdPvPMinigames(this);
 	public void onEnable()
 	{
